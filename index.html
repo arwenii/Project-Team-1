@@ -48,33 +48,30 @@
       width: 100px;
       height: 100px;
     }
-    #Black {
-      background-color: #000;
-    }
-    #Blue {
-      background-color: #00f;
-    }
-    #Red {
-      background-color: #f00;
-    }
-    #Green {
-      background-color: #0f0;
+    #colorDropdown {
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
+  <select id="colorDropdown">
+    <option value="#000">Black</option>
+    <option value="#00f">Blue</option>
+    <option value="#f00">Red</option>
+    <option value="#0f0">Green</option>
+  </select>
   <div class="colorBlock" id="Black"></div>
   <div class="colorBlock" id="Blue"></div>
   <div class="colorBlock" id="Red"></div>
   <div class="colorBlock" id="Green"></div>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
-   //Create anonymous function that listens for a click on anything with the class colorBlock
-    $(".colorBlock").click(function() {
-      //Get the background color of the clicked color block by using the this object
-      var $backgroundColor = $(this).css("background-color");
-      //Set the body's background-color to the received background-color
-      $("body").css("background-color", $backgroundColor);
+   //Create anonymous function that listens for a change on the dropdown menu
+    $("#colorDropdown").change(function() {
+      //Get the selected background color from the dropdown menu
+      var $selectedColor = $(this).val();
+      //Set the body's background-color to the selected color
+      $("body").css("background-color", $selectedColor);
     });
   </script>
 </body>
