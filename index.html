@@ -40,39 +40,63 @@
 <label for="Night Beach">Night Beach</label>
 
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Test</title>
-  <style>
-    .colorBlock {
-      width: 100px;
-      height: 100px;
-    }
-    #colorDropdown {
-      margin-bottom: 10px;
-    }
-  </style>
+    <style>
+        .colorBlock {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        #colorDropdown {
+            margin-bottom: 10px;
+        }
+        /* Hide the native dropdown arrow */
+        select::-ms-expand {
+            display: none;
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <select id="colorDropdown">
-    <option value="#000">Black</option>
-    <option value="#00f">Blue</option>
-    <option value="#f00">Red</option>
-    <option value="#0f0">Green</option>
-  </select>
-  <div class="colorBlock" id="Black"></div>
-  <div class="colorBlock" id="Blue"></div>
-  <div class="colorBlock" id="Red"></div>
-  <div class="colorBlock" id="Green"></div>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-   //Create anonymous function that listens for a change on the dropdown menu
-    $("#colorDropdown").change(function() {
-      //Get the selected background color from the dropdown menu
-      var $selectedColor = $(this).val();
-      //Set the body's background-color to the selected color
-      $("body").css("background-color", $selectedColor);
-    });
-  </script>
+    <input type="hidden" id="colorHidden" value="#000">
+    <select id="colorDropdown">
+        <option value="#000">Black</option>
+        <option value="#00f">Blue</option>
+        <option value="#f00">Red</option>
+        <option value="#0f0">Green</option>
+    </select>
+    <div class="colorBlock" id="Black"></div>
+    <div class="colorBlock" id="Blue"></div>
+    <div class="colorBlock" id="Red"></div>
+    <div class="colorBlock" id="Green"></div>
+    <script>
+        document.getElementById('colorDropdown').addEventListener('change', function() {
+            document.getElementById('colorHidden').value = this.value;
+            document.body.style.backgroundColor = this.value;
+        });
+
+        var colorBlocks = document.querySelectorAll('.colorBlock');
+        colorBlocks.forEach(function(colorBlock) {
+            colorBlock.addEventListener('click', function() {
+                var color = this.id;
+                document.getElementById('colorHidden').value = color;
+                document.body.style.backgroundColor = color;
+            });
+        });
+    </script>
 </body>
 </html>
