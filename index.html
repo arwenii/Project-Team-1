@@ -16,12 +16,16 @@
     <!-- Style for the page background color -->
     <style>
         body {
-            background-color: lightblue; /* Change this color to your preferred background color */
+            background-color: lightblue; 
         }
-        /* CSS styles to position the Spotify player */
+        
         .spotify-player {
-            float: left; /* Align to the left side */
-            margin-right: 20px; /* Add some space between the Spotify player and other content */
+            float: left; 
+            margin-right: 20px; 
+        }
+        
+        .image-container {
+            text-align: center;
         }
     </style>
 </head>
@@ -30,16 +34,13 @@
         <!-- Heading 1 for main title -->
         <h1><center>I Miss The Beach</center></h1>
 
-<legend>Select your beach!</legend>
-                    
-<!-- Radio buttons for selecting user type -->
-<label>Choose your own theme!</label>
-<input type="radio" id="Day Beach" name="beach">
-<label for="Day Beach">Day Beach</label>
-<input type="radio" id="Night Beach" name="beach">
-<label for="Night Beach">Night Beach</label>
-
         <!-- Spotify Embed -->
        <iframe class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+       <!-- Image of the Beach -->
+       <div class="image-container">
+           <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
+       </div>
+    </header>
 </body>
 </html>
