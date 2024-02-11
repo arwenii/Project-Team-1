@@ -18,6 +18,7 @@
         body {
             background-color: lightblue; 
         }
+        
         .spotify-player {
             float: left; 
             margin-right: 20px; 
@@ -26,9 +27,12 @@
         .image-container {
             text-align: center;
         }
-        h1 {
-            font-family: 'Luminari', fantasy; 
+                
         }
+        h1 {
+            font-family: 'Trebuchet MS', sans-serif; 
+        }
+    </style>
     </style>
 </head>
 <body>
@@ -44,5 +48,54 @@
            <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
        </div>
     </header>
+</body>
+</html>
+
+
+<legend>Select your beach!</legend>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Test</title>
+    <style>
+        .colorBlock {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        #colorDropdown {
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <select id="colorDropdown">
+        <option value="#F9B279">Sunrise</option>
+        <option value="#65b2ca">Day</option>
+        <option value="#d29aa5">Sunset</option>
+        <option value="#186690">Night</option>
+    </select>
+    <div class="colorBlock" id="Sunrise"></div>
+    <div class="colorBlock" id="Day"></div>
+    <div class="colorBlock" id="Sunset"></div>
+    <div class="colorBlock" id="Night"></div>
+    <script>
+        document.getElementById('colorDropdown').addEventListener('change', function() {
+            document.body.style.backgroundColor = this.value;
+        });
+
+        var colorBlocks = document.querySelectorAll('.colorBlock');
+        colorBlocks.forEach(function(colorBlock) {
+            colorBlock.addEventListener('click', function() {
+                document.body.style.backgroundColor = this.id;
+            });
+        });
+    </script>
 </body>
 </html>
