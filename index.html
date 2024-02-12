@@ -50,15 +50,6 @@
             font-family: 'Cabin Sketch'; 
             font-size: 15px; 
         }
-        #startTimer {
-            font-family: 'Cabin Sketch'; 
-            font-size: 15px; 
-            padding: 10px 20px; 
-            background-color: lightgreen; 
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
     </style>
     </style>
 </head>
@@ -88,21 +79,48 @@
         </select>
         <button onclick="startPomodoro()">Start Pomodoro</button>
     </div>
+    <!-- Timer Display -->
+    <div id="timerDisplay"></div>
 
     <!-- JavaScript for Pomodoro Timer -->
     <script>
+        var timer;
+        var secondsLeft;
+
         function startPomodoro() {
             var pomodoroTime = document.getElementById("pomodoro").value;
-            alert("Pomodoro timer started for " + pomodoroTime + " minutes!");
-            // You can implement the timer functionality here
+            secondsLeft = pomodoroTime;
+
+            // Update timer display
+            updateTimerDisplay();
+
+            // Start countdown
+            timer = setInterval(countdown, 1000);
+        }
+
+        function countdown() {
+            secondsLeft--;
+            updateTimerDisplay();
+
+            // Check if timer has ended
+            if (secondsLeft === 0) {
+                clearInterval(timer);
+                alert("Pomodoro timer finished!");
+            }
+        }
+
+        function updateTimerDisplay() {
+            var minutes = Math.floor(secondsLeft / 60);
+            var seconds = secondsLeft % 60;
+
+            // Format minutes and seconds with leading zeros if needed
+            var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+            var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Update timer display
+            document.getElementById("timerDisplay").innerHTML = formattedMinutes + ":" + formattedSeconds;
         }
     </script>
-
-    <!-- Custom Cursor -->
-    html, body {
-    cursor: url("cursor.ico"), default;
-    /* just change the cursor.ico path to your location */
-}
 </body>
 </html>
 
