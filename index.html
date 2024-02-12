@@ -59,6 +59,32 @@
            <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
        </div>
     </header>
+    
+    <!-- Pomodoro Timer Dropdown -->
+    <div>
+        <label for="pomodoro">Select Pomodoro Time:</label>
+        <select id="pomodoro">
+            <option value="25">25 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="35">35 minutes</option>
+            <option value="40">40 minutes</option>
+            <!-- Add more options as needed -->
+        </select>
+        <button onclick="startPomodoro()">Start Pomodoro</button>
+    </div>
+
+    <footer>
+        <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
+    </footer>
+
+    <!-- JavaScript for Pomodoro Timer -->
+    <script>
+        function startPomodoro() {
+            var pomodoroTime = document.getElementById("pomodoro").value;
+            alert("Pomodoro timer started for " + pomodoroTime + " minutes!");
+            // You can implement the timer functionality here
+        }
+    </script>
 </body>
 </html>
 
