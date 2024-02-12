@@ -51,10 +51,10 @@
             font-size: 15px; 
         }
         #startTimer {
-            font-family: 'Cabin Sketch'; /* Apply Cabin Sketch font */
-            font-size: 15px; /* Adjust font size if needed */
-            padding: 10px 20px; /* Adjust padding if needed */
-            background-color: lightgreen; /* Example background color */
+            font-family: 'Cabin Sketch'; 
+            font-size: 15px; 
+            padding: 10px 20px; 
+            background-color: lightgreen; 
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -89,10 +89,6 @@
         <button onclick="startPomodoro()">Start Pomodoro</button>
     </div>
 
-    <footer>
-        <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
-    </footer>
-
     <!-- JavaScript for Pomodoro Timer -->
     <script>
         function startPomodoro() {
@@ -101,6 +97,12 @@
             // You can implement the timer functionality here
         }
     </script>
+
+    <!-- Custom Cursor -->
+    html, body {
+    cursor: url("cursor.ico"), default;
+    /* just change the cursor.ico path to your location */
+}
 </body>
 </html>
 
@@ -152,4 +154,8 @@
     </script>
 </body>
 </html>
+
+    <footer>
+        <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
+    </footer>
 
