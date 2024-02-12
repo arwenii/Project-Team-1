@@ -89,7 +89,7 @@
 
         function startPomodoro() {
             var pomodoroTime = document.getElementById("pomodoro").value;
-            secondsLeft = pomodoroTime;
+            secondsLeft = pomodoroTime * 60; // Convert minutes to seconds
 
             // Update timer display
             updateTimerDisplay();
