@@ -1,18 +1,11 @@
 <!DOCTYPE html>
-<!-- The HTML document declaration -->
 <html lang="en">
 <head>
-    <!-- Meta tags for character set, description, and viewport settings -->
     <meta charset="UTF-8">
     <meta name="description" content="Welcome to the relaxing world of I Miss The Beach.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Title of the page -->
     <title>I Miss The Beach</title>
-    
-    <!-- Link to external stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
-
     <!-- Link to font spreadsheet -->
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
 
@@ -20,14 +13,14 @@
     <style>
         body {
             background: lightblue; 
+            overflow: hidden; 
         }
-
-        /* Keyframe animation for moving clouds */
+      
         @keyframes clouds {
             0% { left: -100%; }
             100% { left: 100%; }
         }
-        
+
         /* Cloud styles */
         .cloud {
             position: absolute;
@@ -36,7 +29,7 @@
             height: auto;
             animation: clouds 30s linear infinite; /* Adjust animation duration and timing function */
             z-index: -1; /* Move clouds behind other content */
-        }      
+        }
         
         .spotify-player {
             float: left; 
