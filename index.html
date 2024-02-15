@@ -15,21 +15,25 @@
             background: lightblue; 
         }
       
-        @keyframes clouds {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        /* Keyframe animation for moving clouds */
+        @keyframes moveClouds {
+            from { left: -100%; }
+            to { left: 100%; }
         }
 
         /* Cloud styles */
         .cloud {
             position: absolute;
             top: 20%; /* Adjust as needed */
-            width: 300px; /* Adjust size of clouds */
+            width: 200px; /* Adjust size of clouds */
             height: auto;
-            animation: clouds 30s linear infinite; /* Adjust animation duration and timing function */
-            z-index: -1; /* Move clouds behind other content */
+            animation: moveClouds 60s linear infinite; /* Adjust animation duration and timing function */
         }
-        
+    </style>
+</head>
+<body>
+    <div class="cloud"><img src="cloud.png" alt="Cloud" width="100%"></div>
+
         .spotify-player {
             float: left; 
             margin-right: 20px; 
