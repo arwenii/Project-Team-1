@@ -85,17 +85,12 @@
     </style>
 </head>
 <body>
-    <select id="colorDropdown">
-        <option value="#F9B279">Sunrise</option>
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <option value="#65b2ca">Day</option>
-        <option value="#d29aa5">Sunset</option>
-        <option value="#186690">Night</option>
-    </select>
-    <div class="colorBlock" id="Sunrise"></div>
-    <div class="colorBlock" id="Day"></div>
-    <div class="colorBlock" id="Sunset"></div>
-    <div class="colorBlock" id="Night"></div>
+    <select id="playlist">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator">Sunrise</option>
+    <div class="colorBlock" id="Sunrise" style="background-color: #F9B279"></div>
+    <div class="colorBlock" id="Day" style="background-color: #65b2ca"></div>
+    <div class="colorBlock" id="Sunset" style="background-color: #d29aa5"></div>
+    <div class="colorBlock" id="Night" style="background-color: #186690"></div>
     <script>
         document.getElementById('colorDropdown').addEventListener('change', function() {
             document.body.style.backgroundColor = this.value;
