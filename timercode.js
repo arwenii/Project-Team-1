@@ -26,7 +26,7 @@ export default class Timer {
 
         this.el.work.addEventListener("click", () => {
             this.stop();
-            this.remainingSeconds = 0.1 * 60;
+            this.remainingSeconds = 25 * 60;
             this.updateInterfaceTime();
             this.befShortBreak = true;
             this.pomodoroCount++;
