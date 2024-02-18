@@ -62,16 +62,19 @@
     <select id="colorDropdown">
         <option value="#F9B279" data-playlist="07uIAqgp4gyTTH5M4GuTvA">Sunrise</option>
         <option value="#65b2ca" data-playlist="2OfCEn3AjY4M1FP7dEiIoK">Day</option>
-        <option value="#d29aa5" data-playlist=>Sunset</option>
-        <option value="#186690" data-playlist=>Night</option>
+        <option value="#d29aa5" data-playlist="07uIAqgp4gyTTH5M4GuTvA">Sunset</option>
+        <option value="#186690" data-playlist="07uIAqgp4gyTTH5M4GuTvA">Night</option>
     </select>
     <div class="colorBlock" id="Sunrise"></div>
     <div class="colorBlock" id="Day"></div>
     <div class="colorBlock" id="Sunset"></div>
     <div class="colorBlock" id="Night"></div>
+    <div id="spotify-widget"></div>
     <script>
         document.getElementById('colorDropdown').addEventListener('change', function() {
             document.body.style.backgroundColor = this.value;
+            var playlistId = this.options[this.selectedIndex].getAttribute('data-playlist');
+            loadPlaylistWidget(playlistId);
         });
 
         var colorBlocks = document.querySelectorAll('.colorBlock');
@@ -80,6 +83,18 @@
                 document.body.style.backgroundColor = this.id;
             });
         });
+
+        function loadPlaylistWidget(playlistId) {
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://open.spotify.com/embed/playlist/' + playlistId;
+            iframe.width = '300';
+            iframe.height = '380';
+            iframe.frameborder = '0';
+            iframe.allowtransparency = 'true';
+            iframe.allow = 'encrypted-media';
+            document.getElementById('spotify-widget').innerHTML = '';
+            document.getElementById('spotify-widget').appendChild(iframe);
+        }
     </script>
     <div class="timer"></div>
     <script src="./timer.js" type="module"></script>
