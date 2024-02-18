@@ -43,7 +43,8 @@
             font-size: 20px; 
         }
     </style>
-    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./timer.css">
 </head>
 <body>
     <header>
@@ -55,33 +56,9 @@
            <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
        </div>
     </header>
-</body>
-</html>
 
+    <legend>Select your beach!</legend>
 
-<legend>Select your beach!</legend>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Test</title>
-    <style>
-        .colorBlock {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        #colorDropdown {
-            margin-bottom: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-    </style>
-</head>
-<body>
     <select id="colorDropdown">
         <option value="#F9B279">Sunrise</option>
         <option value="#65b2ca">Day</option>
@@ -104,7 +81,9 @@
             });
         });
     </script>
+    <div class="timer"></div>
+    <script src="./timer.js" type="module"></script>
+    <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
+    <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
 </body>
 </html>
-<p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
-
