@@ -6,11 +6,15 @@ export default class Timer {
             minutes: root.querySelector(".timer__part--minutes"),
             seconds: root.querySelector(".timer__part--seconds"),
             control: root.querySelector(".timer__btn--control"),
-            reset: root.querySelector(".timer__btn--reset"),
+            work: root.querySelector(".timer__btn--work"),
+            break: root.querySelector(".timer__btn--break"),
+            count: root.querySelector(".pomodoroCount")
         };
 
         this.interval = null;
         this.remainingSeconds = 0;
+        this.befShortBreak = false;
+        this.pomodoroCount = 0;
 
         this.el.control.addEventListener("click", () => {
             if (this.interval === null) {
@@ -20,14 +24,21 @@ export default class Timer {
             }
         });
 
-        this.el.reset.addEventListener("click", () => {
-            const inputMinutes = prompt("Enter number of minutes:");
+        this.el.work.addEventListener("click", () => {
+            this.stop();
+            this.remainingSeconds = 0.1 * 60;
+            this.updateInterfaceTime();
+            this.befShortBreak = true;
+            this.pomodoroCount++;
+            this.updatePomodoroCount();
+        });
 
-            if (inputMinutes < 60) {
-                this.stop();
-                this.remainingSeconds = inputMinutes * 60;
-                this.updateInterfaceTime();
-            }
+        this.el.break.addEventListener("click", () => {
+            this.stop();
+            this.remainingSeconds = 30 * 60;
+            this.updateInterfaceTime();
+            this.pomodoroCount = 0;
+            this.updatePomodoroCount();
         });
     }
 
@@ -51,6 +62,10 @@ export default class Timer {
         }
     }
 
+    updatePomodoroCount() {
+        this.el.count.innerHTML = `<span class="pomodoroCount">Pomodoro Count: ${this.pomodoroCount}</span>`;
+    }
+
     start() {
         if (this.remainingSeconds === 0) return;
 
@@ -60,6 +75,11 @@ export default class Timer {
 
             if (this.remainingSeconds === 0) {
                 this.stop();
+                if (this.befShortBreak === true) {
+                    this.remainingSeconds = 5 * 60;
+                    this.befShortBreak = false;
+                    this.start();
+                }
             }
         }, 1000);
 
@@ -82,9 +102,15 @@ export default class Timer {
             <button type="button" class="timer__btn timer__btn--control timer__btn--start">
                 <span class="material-icons">play_arrow</span>
             </button>
-            <button type="button" class="timer__btn timer__btn--reset">
-                <span class="material-icons">timer</span>
+
+            <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--work">
+                <span class="pomodoro">1 Pomodoro</span>
             </button>
+            <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--break">
+                <span class="pomodoro">Long Break</span>
+            </button>
+
+            <span class="pomodoroCount">Pomodoro Count: </span>
         `;
     }
 }
