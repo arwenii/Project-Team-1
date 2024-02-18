@@ -50,6 +50,9 @@
         <!-- Heading 1 for the main title -->
         <h1><center>I Miss The Beach</center></h1>
 
+        <!-- Spotify Embed -->
+       <iframe class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
        <!-- Image of the Beach -->
        <div class="image-container">
            <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
@@ -82,16 +85,21 @@
     </style>
 </head>
 <body>
-    <select id="playlist">
+    <select id="colorDropdown">
+        <option value="#F9B279">Sunrise</option>
+        <option value="#65b2ca">Day</option>
+        <option value="#d29aa5">Sunset</option>
+        <option value="#186690">Night</option>
+    <select id="spotifyPlaylist">
         <option value="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator">Sunrise</option>
         <option value="https://open.spotify.com/embed/playlist/07uIAqgp4gyTTH5M4GuTvA?utm_source=generator">Day</option>
         <option value="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator">Sunset</option>
         <option value="https://open.spotify.com/embed/playlist/5yWVmgDZz8yRHQoVeRDfZD?utm_source=generator">Night</option>
     </select>
-    <div class="colorBlock" id="Sunrise" style="background-color: #F9B279"></div>
-    <div class="colorBlock" id="Day" style="background-color: #65b2ca"></div>
-    <div class="colorBlock" id="Sunset" style="background-color: #d29aa5"></div>
-    <div class="colorBlock" id="Night" style="background-color: #186690"></div>
+    <div class="colorBlock" id="Sunrise"></div>
+    <div class="colorBlock" id="Day"></div>
+    <div class="colorBlock" id="Sunset"></div>
+    <div class="colorBlock" id="Night"></div>
     <script>
         document.getElementById('colorDropdown').addEventListener('change', function() {
             document.body.style.backgroundColor = this.value;
@@ -107,3 +115,4 @@
 </body>
 </html>
 <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
+
