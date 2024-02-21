@@ -43,7 +43,6 @@
             font-size: 20px; 
         }
     </style>
-    </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./timer.css">
 </head>
@@ -53,7 +52,7 @@
         <h1><center>I Miss The Beach</center></h1>
 
         <!-- Spotify Embed -->
-       <iframe class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+       <iframe class="spotify-player" id="spotifyPlayer" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
        <!-- Image of the Beach -->
        <div class="image-container">
@@ -88,42 +87,38 @@
 </head>
 <body>
     <select id="colorDropdown">
-        <option value="#F9B279">Sunrise</option>
-        <option value="#65b2ca">Day</option>
-        <option value="#d29aa5">Sunset</option>
-        <option value="#186690">Night</option>
-    <select id="colorDropdown">
-        <option data-playlist="https://open.spotify.com/embed/playlist/07uIAqgp4gyTTH5M4GuTvA?utm_source=generator&theme=0" >Sunrise</option>
-        <option data-playlist="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator&theme=0">Day</option>
-        <option data-playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0">Sunset</option>
-        <option data-playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0">Night</option>
+        <option value="#F9B279" playlist="https://open.spotify.com/embed/playlist/07uIAqgp4gyTTH5M4GuTvA?utm_source=generator&theme=0">Sunrise</option>
+        <option value="#65b2ca" playlist="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator&theme=0">Day</option>
+        <option value="#d29aa5" playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0">Sunset</option>
+        <option value="#186690" playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0">Night</option>
     </select>
-    <div class="colorBlock" id="Sunrise"></div>
-    <div class="colorBlock" id="Day"></div>
-    <div class="colorBlock" id="Sunset"></div>
-    <div class="colorBlock" id="Night"></div>
+
+    <div class="colorBlock" id="Sunrise" playlist="https://open.spotify.com/embed/playlist/07uIAqgp4gyTTH5M4GuTvA?utm_source=generator&theme=0"></div>
+    <div class="colorBlock" id="Day" playlist="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator&theme=0"></div>
+    <div class="colorBlock" id="Sunset" playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0"></div>
+    <div class="colorBlock" id="Night" playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0"></div>
         
     <script>
         document.getElementById('colorDropdown').addEventListener('change', function() {
             var selectedColor = this.value;
-            var selectedPlaylist = this.options[this.selectedIndex].dataset.playlist;
+            var selectedPlaylist = this.options[this.selectedIndex].getAttribute('playlist');
             document.body.style.backgroundColor = selectedColor;
-            document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
+            document.getElementById('spotifyPlayer').src = selectedPlaylist;
         });
 
         var colorBlocks = document.querySelectorAll('.colorBlock');
         colorBlocks.forEach(function(colorBlock) {
             colorBlock.addEventListener('click', function() {
                 var selectedColor = this.id;
-                var selectedPlaylist = this.dataset.playlist;
+                var selectedPlaylist = this.getAttribute('playlist');
                 document.body.style.backgroundColor = selectedColor;
-                document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
+                document.getElementById('spotifyPlayer').src = selectedPlaylist;
             });
         });
     </script>
     <div class="timer"></div>
     <script src="./timer.js" type="module"></script>
     <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
+    <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
 </body>
 </html>
-<p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
