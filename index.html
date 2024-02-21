@@ -52,58 +52,34 @@
         <h1><center>I Miss The Beach</center></h1>
 
         <!-- Spotify Embed -->
-       <iframe class="spotify-player" id="spotifyPlayer" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe id="spotifyPlayer" class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
        <!-- Image of the Beach -->
        <div class="image-container">
            <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
        </div>
     </header>
-</body>
-</html>
 
+    <legend>Select your beach!</legend>
 
-<legend>Select your beach!</legend>
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Test</title>
-    <style>
-        .colorBlock {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        #colorDropdown {
-            margin-bottom: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-        }
-    </style>
-</head>
-<body>
     <select id="colorDropdown">
-        <option value="#F9B279" playlist="https://open.spotify.com/embed/playlist/07uIAqgp4gyTTH5M4GuTvA?utm_source=generator&theme=0">Sunrise</option>
-        <option value="#65b2ca" playlist="https://open.spotify.com/embed/playlist/2OfCEn3AjY4M1FP7dEiIoK?utm_source=generator&theme=0">Day</option>
-        <option value="#d29aa5" playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0">Sunset</option>
-        <option value="#186690" playlist="https://open.spotify.com/embed/playlist/4nHtlYcXRevxSosWyjmz2F?utm_source=generator&theme=0">Night</option>
+        <option value="#F9B279" playlist="2OfCEn3AjY4M1FP7dEiIoK">Sunrise</option>
+        <option value="#65b2ca" playlist="07uIAqgp4gyTTH5M4GuTvA">Day</option>
+        <option value="#d29aa5" playlist="4nHtlYcXRevxSosWyjmz2F">Sunset</option>
+        <option value="#186690" playlist="4nHtlYcXRevxSosWyjmz2F">Night</option>
     </select>
 
-    <div class="colorBlock" id="Sunrise"></div>
-    <div class="colorBlock" id="Day"></div>
-    <div class="colorBlock" id="Sunset"></div>
-    <div class="colorBlock" id="Night"></div>
-        
+    <div class="colorBlock" id="Sunrise" playlist="2OfCEn3AjY4M1FP7dEiIoK"></div>
+    <div class="colorBlock" id="Day" playlist="07uIAqgp4gyTTH5M4GuTvA"></div>
+    <div class="colorBlock" id="Sunset" playlist="4nHtlYcXRevxSosWyjmz2F"></div>
+    <div class="colorBlock" id="Night" playlist="4nHtlYcXRevxSosWyjmz2F"></div>
+
     <script>
         document.getElementById('colorDropdown').addEventListener('change', function() {
             var selectedColor = this.value;
             var selectedPlaylist = this.options[this.selectedIndex].getAttribute('playlist');
             document.body.style.backgroundColor = selectedColor;
-            document.getElementById('spotifyPlayer').src = selectedPlaylist;
+            document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
         });
 
         var colorBlocks = document.querySelectorAll('.colorBlock');
@@ -112,7 +88,7 @@
                 var selectedColor = this.id;
                 var selectedPlaylist = this.getAttribute('playlist');
                 document.body.style.backgroundColor = selectedColor;
-                document.getElementById('spotifyPlayer').src = selectedPlaylist;
+                document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
             });
         });
     </script>
