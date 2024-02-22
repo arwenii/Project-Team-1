@@ -18,6 +18,10 @@
     <style>
         body {
             background: #F9B279; 
+            margin: 0; /* Add this line to reset default body margin */
+            overflow: hidden; /* Hide overflowing clouds */
+            position: relative; /* Set position relative to allow absolute positioning of clouds */
+        }
         }
 
         .cloud {
@@ -26,7 +30,7 @@
             background-image: url('cloud.png'); /* Replace with your cloud image */
             background-size: cover;
             position: absolute;
-            top: 1000px; /* Adjust positioning */
+            top: 100px; /* Adjust positioning */
         }
 
         @keyframes floatClouds1 {
