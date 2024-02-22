@@ -46,7 +46,17 @@
                 transform: translateX(950%);
             }
         }
+        
         @keyframes floatClouds3 {
+            0% {
+                transform: translateX(-950%);
+            }
+            100% {
+                transform: translateX(950%);
+            }
+        }
+        
+        @keyframes floatClouds4 {
             0% {
                 transform: translateX(-950%);
             }
@@ -68,7 +78,11 @@
             animation: floatClouds2 12s linear infinite; /* Adjust animation duration and timing function */
             animation-delay: 0s; /* Adjust delay for second cloud */
         }
-        
+        .cloud4 {
+            animation: floatClouds2 8s linear infinite; /* Adjust animation duration and timing function */
+            animation-delay: 0s; /* Adjust delay for second cloud */
+        }
+
         .spotify-player {
             float: left; 
             margin-right: 20px; 
