@@ -19,7 +19,34 @@
         body {
             background: #F9B279; 
         }
+        
+        .cloud {
+            width: 150px;
+            height: 100px;
+            background-image: url('cloud.png'); /* Replace with your cloud image */
+            background-size: cover;
+            position: absolute;
+            top: 100px; /* Adjust positioning */
+            animation: floatClouds 20s linear infinite; /* Adjust animation duration and timing function */
+        }
 
+        @keyframes floatClouds {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .spotify-player {
+            float: left; 
+            margin-right: 20px; 
+        }
+        
+        .image-container {
+            text-align: center;
+        }
         
         .spotify-player {
             float: left; 
@@ -57,34 +84,13 @@
 
        <!-- Image of the Beach -->
        <div class="image-container">
-           <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
+           <img src="beach.png" alt="Picture of The Beach" width="1000"> 
        </div>
+        <div class="cloud"></div>
+        <div class="cloud" style="top: 200px;"></div>
     </header>
 </body>
 
-{
-  margin: 0;
-  overflow: hidden; /* Hide overflowing clouds */
-}
-
-.cloud {
-  width: 150px;
-  height: 100px;
-  background-image: url('cloud.png'); /* Replace with your cloud image */
-  background-size: cover;
-  position: absolute;
-  top: 100px; /* Adjust positioning */
-  animation: floatClouds 20s linear infinite; /* Adjust animation duration and timing function */
-}
-
-@keyframes floatClouds {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
 
 <legend>Select your beach!</legend>
     <select id="colorDropdown">
