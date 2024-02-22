@@ -38,34 +38,23 @@
             }
         }
 
-        @keyframes floatClouds {
+        @keyframes floatClouds2 {
             0% {
-                transform: translateX(-100%);
+                transform: translateX(100%);
             }
             100% {
-                transform: translateX(100%);
+                transform: translateX(-100%);
             }
         }
 
-        /* Define animation for each cloud */
         .cloud1 {
-            animation: floatClouds 100s linear infinite; /* Adjust animation duration and timing function */
+            animation: floatClouds1 20s linear infinite; /* Adjust animation duration and timing function */
             animation-delay: 0s; /* Adjust delay for first cloud */
         }
 
         .cloud2 {
-            animation: floatClouds 100s linear infinite; /* Adjust animation duration and timing function */
+            animation: floatClouds2 30s linear infinite; /* Adjust animation duration and timing function */
             animation-delay: 5s; /* Adjust delay for second cloud */
-        }
-
-        .cloud3 {
-            animation: floatClouds 100s linear infinite; /* Adjust animation duration and timing function */
-            animation-delay: 10s; /* Adjust delay for third cloud */
-        }
-
-        .cloud4 {
-            animation: floatClouds 100s linear infinite; /* Adjust animation duration and timing function */
-            animation-delay: 15s; /* Adjust delay for fourth cloud */
         }
         
         .spotify-player {
@@ -107,9 +96,7 @@
        </div>
        <!-- Floating clouds -->
        <div class="cloud cloud1"></div>
-       <div class="cloud cloud2" style="top: 100px;"></div>
-       <div class="cloud cloud3"></div>
-       <div class="cloud cloud4" style="top: 150px;"></div>
+       <div class="cloud cloud2" style="top: 200px;"></div>
         
     </header>
 
