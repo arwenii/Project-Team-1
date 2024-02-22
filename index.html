@@ -46,6 +46,14 @@
                 transform: translateX(950%);
             }
         }
+        @keyframes floatClouds3 {
+            0% {
+                transform: translateX(-950%);
+            }
+            100% {
+                transform: translateX(950%);
+            }
+        }
 
         .cloud1 {
             animation: floatClouds1 10s linear infinite; /* Adjust animation duration and timing function */
@@ -53,7 +61,11 @@
         }
 
         .cloud2 {
-            animation: floatClouds2 20s linear infinite; /* Adjust animation duration and timing function */
+            animation: floatClouds2 15s linear infinite; /* Adjust animation duration and timing function */
+            animation-delay: 0s; /* Adjust delay for second cloud */
+        }
+        .cloud3 {
+            animation: floatClouds2 12s linear infinite; /* Adjust animation duration and timing function */
             animation-delay: 0s; /* Adjust delay for second cloud */
         }
         
@@ -97,6 +109,8 @@
        <!-- Floating clouds -->
        <div class="cloud cloud1"></div>
        <div class="cloud cloud2" style="top: 200px;"></div>
+        <div class="cloud cloud3"></div>
+       <div class="cloud cloud4" style="top: 200px;"></div>
         
     </header>
 
