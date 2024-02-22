@@ -19,18 +19,17 @@
         body {
             background: #F9B279; 
         }
-        
+
         .cloud {
-            width: 300px;
-            height: 200px;
+            width: 300px; /* Larger width */
+            height: 200px; /* Larger height */
             background-image: url('cloud.png'); /* Replace with your cloud image */
             background-size: cover;
             position: absolute;
             top: 100px; /* Adjust positioning */
-            animation: floatClouds 20s linear infinite; /* Adjust animation duration and timing function */
         }
 
-        @keyframes floatClouds {
+        @keyframes floatClouds1 {
             0% {
                 transform: translateX(-100%);
             }
@@ -39,13 +38,23 @@
             }
         }
 
-        .spotify-player {
-            float: left; 
-            margin-right: 20px; 
+        @keyframes floatClouds2 {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
-        
-        .image-container {
-            text-align: center;
+
+        .cloud1 {
+            animation: floatClouds1 20s linear infinite; /* Adjust animation duration and timing function */
+            animation-delay: 0s; /* Adjust delay for first cloud */
+        }
+
+        .cloud2 {
+            animation: floatClouds2 30s linear infinite; /* Adjust animation duration and timing function */
+            animation-delay: 5s; /* Adjust delay for second cloud */
         }
         
         .spotify-player {
@@ -70,7 +79,6 @@
             font-size: 20px; 
         }
     </style>
-    </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./timer.css">
 </head>
@@ -80,52 +88,59 @@
         <h1><center>I Miss The Beach</center></h1>
 
         <!-- Spotify Embed -->
-       <iframe class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe id="spotifyPlayer" class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
        <!-- Image of the Beach -->
        <div class="image-container">
-           <img src="beach.png" alt="Picture of The Beach" width="1000"> 
+           <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
        </div>
-        <div class="cloud"></div>
-        <div class="cloud" style="top: 500px;"></div>
-        <div class="cloud"></div>
-       <div class="cloud" style="top: 450px;"></div>
-        <div class="cloud"></div>
-       <div class="cloud" style="top: 200px;"></div>
+       <!-- Floating clouds -->
+       <div class="cloud cloud1"></div>
+       <div class="cloud cloud2" style="top: 100px;"></div>
+        <div class="cloud cloud1"></div>
+       <div class="cloud cloud2" style="top: 50px;"></div>       
+        <div class="cloud cloud1"></div>
+       <div class="cloud cloud2" style="top: 20px;"></div>
+        <div class="cloud cloud1"></div>
+       <div class="cloud cloud2" style="top: 120px;"></div>
+        
     </header>
-</body>
 
+    <legend>Select your beach!</legend>
 
-<legend>Select your beach!</legend>
     <select id="colorDropdown">
-        <option value="#F9B279">Sunrise</option>
-        <option value="#65b2ca">Day</option>
-        <option value="#d29aa5">Sunset</option>
-        <option value="#186690">Night</option>
+        <option value="#F9B279" playlist="2OfCEn3AjY4M1FP7dEiIoK">Sunrise</option>
+        <option value="#65b2ca" playlist="07uIAqgp4gyTTH5M4GuTvA">Day</option>
+        <option value="#d29aa5" playlist="4nHtlYcXRevxSosWyjmz2F">Sunset</option>
+        <option value="#186690" playlist="5yWVmgDZz8yRHQoVeRDfZD">Night</option>
     </select>
-    <div class="colorBlock" id="Sunrise"></div>
-    <div class="colorBlock" id="Day"></div>
-    <div class="colorBlock" id="Sunset"></div>
-    <div class="colorBlock" id="Night"></div>
+
+    <div class="colorBlock" id="Sunrise" playlist="2OfCEn3AjY4M1FP7dEiIoK"></div>
+    <div class="colorBlock" id="Day" playlist="07uIAqgp4gyTTH5M4GuTvA"></div>
+    <div class="colorBlock" id="Sunset" playlist="4nHtlYcXRevxSosWyjmz2F"></div>
+    <div class="colorBlock" id="Night" playlist="5yWVmgDZz8yRHQoVeRDfZD"></div>
+
     <script>
         document.getElementById('colorDropdown').addEventListener('change', function() {
-            document.body.style.backgroundColor = this.value;
+            var selectedColor = this.value;
+            var selectedPlaylist = this.options[this.selectedIndex].getAttribute('playlist');
+            document.body.style.backgroundColor = selectedColor;
+            document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
         });
 
         var colorBlocks = document.querySelectorAll('.colorBlock');
         colorBlocks.forEach(function(colorBlock) {
             colorBlock.addEventListener('click', function() {
-                document.body.style.backgroundColor = this.id;
+                var selectedColor = this.id;
+                var selectedPlaylist = this.getAttribute('playlist');
+                document.body.style.backgroundColor = selectedColor;
+                document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
             });
         });
     </script>
-    <details>
-        <summary><code><h1>Pomodoro Timer</h1></code></summary>
-        <div class="timer"></div>
-        <script src="./timer.js" type="module"></script>
-        <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
-        </details>
-
+    <div class="timer"></div>
+    <script src="./timer.js" type="module"></script>
+    <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
+    <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
 </body>
 </html>
-<p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
