@@ -38,15 +38,16 @@
             }
         }
 
-        @keyframes floatClouds2 {
+        @keyframes floatClouds {
             0% {
-                transform: translateX(100%);
+                transform: translateX(-100%);
             }
             100% {
-                transform: translateX(-100%);
+                transform: translateX(100%);
             }
         }
 
+        /* Define animation for each cloud */
         .cloud1 {
             animation: floatClouds 100s linear infinite; /* Adjust animation duration and timing function */
             animation-delay: 0s; /* Adjust delay for first cloud */
