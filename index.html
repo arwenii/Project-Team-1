@@ -62,47 +62,29 @@
     </header>
 </body>
 
-    <style>
+{
+  margin: 0;
+  overflow: hidden; /* Hide overflowing clouds */
+}
 
-      /* Set the style of the clouds to be white and round */
-      .cloud {
-        fill: white;
-        stroke: white;
-        stroke-width: 5;
-        border-radius: 50%;
-      }
+.cloud {
+  width: 150px;
+  height: 100px;
+  background-image: url('cloud.png'); /* Replace with your cloud image */
+  background-size: cover;
+  position: absolute;
+  top: 100px; /* Adjust positioning */
+  animation: floatClouds 20s linear infinite; /* Adjust animation duration and timing function */
+}
 
-      /* Set the style of the sun to be yellow and round */
-      .sun {
-        fill: yellow;
-        stroke: yellow;
-        stroke-width: 5;
-        border-radius: 50%;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Create a container for the sun and clouds -->
-    <div class="container">
-      <!-- Create a sun with a radius of 50 and centered at (150, 100) -->
-      <svg class="sun" height="100" width="300">
-        <circle cx="150" cy="50" r="50" />
-      </svg>
-
-      <!-- Create a cloud with a width of 200 and centered at (250, 50) -->
-      <svg class="cloud" height="100" width="300">
-        <ellipse cx="250" cy="50" rx="100" ry="30" />
-        <ellipse cx="220" cy="35" rx="70" ry="20" />
-        <ellipse cx="280" cy="35" rx="70" ry="20" />
-      </svg>
-
-      <!-- Create a cloud with a width of 150 and centered at (50, 80) -->
-      <svg class="cloud" height="100" width="300">
-        <ellipse cx="50" cy="80" rx="75" ry="25" />
-        <ellipse cx="20" cy="65" rx="50" ry="15" />
-        <ellipse cx="80" cy="65" rx="50" ry="15" />
-      </svg>
-    </div>
+@keyframes floatClouds {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
 <legend>Select your beach!</legend>
     <select id="colorDropdown">
