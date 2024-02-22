@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="Welcome to the relaxing world of I Miss The Beach.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Title of the page -->
     <title>I Miss The Beach</title>
+    
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    
     <!-- Link to font spreadsheet -->
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
 
@@ -15,6 +20,7 @@
             background: lightblue; 
         }
 
+        
         .spotify-player {
             float: left; 
             margin-right: 20px; 
@@ -23,7 +29,7 @@
         .image-container {
             text-align: center;
         }
-                
+                     
         h1 {
             font-family: 'Cabin Sketch'; 
             font-size: 50px; 
@@ -36,18 +42,14 @@
             font-family: 'Cabin Sketch'; 
             font-size: 20px; 
         }
-        label {
-            font-family: 'Cabin Sketch';
-        }
-        #pomodoro {
-            font-family: 'Cabin Sketch'; 
-            font-size: 15px; 
-        }
     </style>
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./timer.css">
 </head>
 <body>
     <header>
-        <!-- Heading 1 for main title -->
+        <!-- Heading 1 for the main title -->
         <h1><center>I Miss The Beach</center></h1>
 
         <!-- Spotify Embed -->
@@ -58,78 +60,18 @@
            <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
        </div>
     </header>
-    
-    <!-- Pomodoro Timer Dropdown -->
-    <div>
-        <label for="pomodoro">Select Pomodoro Time:</label>
-        <select id="pomodoro">
-            <option value="25">25 minutes</option>
-            <option value="30">30 minutes</option>
-            <option value="35">35 minutes</option>
-            <option value="40">40 minutes</option>
-            <!-- Add more options as needed -->
-        </select>
-        <button onclick="startPomodoro()">Start Pomodoro</button>
-    </div>
-    <!-- Timer Display -->
-    <div id="timerDisplay"></div>
-
-    <!-- JavaScript for Pomodoro Timer -->
-    <script>
-        var timer;
-        var secondsLeft;
-
-        function startPomodoro() {
-            var pomodoroTime = document.getElementById("pomodoro").value;
-            secondsLeft = pomodoroTime * 60; // Convert minutes to seconds
-
-            // Update timer display
-            updateTimerDisplay();
-
-            // Start countdown
-            timer = setInterval(countdown, 1000);
-        }
-
-        function countdown() {
-            secondsLeft--;
-            updateTimerDisplay();
-
-            // Check if timer has ended
-            if (secondsLeft === 0) {
-                clearInterval(timer);
-                alert("Pomodoro timer finished!");
-            }
-        }
-
-        function updateTimerDisplay() {
-            var minutes = Math.floor(secondsLeft / 60);
-            var seconds = secondsLeft % 60;
-
-            // Format minutes and seconds with leading zeros if needed
-            var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-            var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
-
-            // Update timer display
-            document.getElementById("timerDisplay").innerHTML = formattedMinutes + ":" + formattedSeconds;
-        }
-            // Change background color based on selected option
-            document.getElementById('colorDropdown').addEventListener('change', function() {
-                document.body.style.background = this.value;
-        });
-    </script>
 </body>
 </html>
 
-<div>
-    <div>
-    <legend>Select your beach!</legend>
-    </div>
+
+<legend>Select your beach!</legend>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Test</title>
-     <style>
+    <style>
         .colorBlock {
             width: 100px;
             height: 100px;
@@ -167,16 +109,9 @@
             });
         });
     </script>
-    </div>  
-    
-    <footer>
-    <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
-    </footer>
+    <div class="timer"></div>
+    <script src="./timer.js" type="module"></script>
+    <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
 </body>
 </html>
-
-
-
-
-
-
+<p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
