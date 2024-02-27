@@ -1,21 +1,21 @@
 .timer {
     font-family: sans-serif;
     display: inline-block;
-    padding: 12px 20px;
-    border-radius: 20px;
+    padding: 8px 16px;
+    border-radius: 15px;
     background: white;
 }
 
 .timer__part {
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .timer__btn {
-    width: 50px;
-    height: 50px;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    margin-left: 3px;
+    margin-right: 3px;
     border-radius: 50%;
     border: none;
     color: white;
@@ -32,10 +32,10 @@
 }
 
 .timer__btn--pomodoro {
-    font-size: 10px;
+    font-size: 8px;
 }
 
 .timerDescription {
     font-family: sans-serif;
-    font-size: 12px;
+    font-size: 10px;
 }
