@@ -1,5 +1,5 @@
 .timer {
-    font-family: sans-serif;
+    font-family: Cabin Sketch, sans-serif;
     display: inline-block;
     padding: 8px 16px;
     border-radius: 5px;
@@ -36,6 +36,6 @@
 }
 
 .timerDescription {
-    font-family: sans-serif;
+    font-family: Cabin Sketch, sans-serif;
     font-size: 12px;
 }
