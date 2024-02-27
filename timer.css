@@ -1,7 +1,7 @@
 .timer {
     font-family: sans-serif;
     display: inline-block;
-    padding: 2px 4px;
+    padding: 8px 16px;
     border-radius: 5px;
     background: white;
 }
@@ -12,10 +12,10 @@
 }
 
 .timer__btn {
-    width: 10px;
-    height: 10px;
-    margin-left: 1px;
-    margin-right: 1px;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 50%;
     border: none;
     color: white;
