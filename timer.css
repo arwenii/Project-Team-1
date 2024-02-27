@@ -1,7 +1,7 @@
     <!-- Link to font spreadsheet -->
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
 .timer {
-    font-family: sans-serif;
+    font-family: 'Cabin Sketch';
     display: inline-block;
     padding: 24px 32px;
     border-radius: 30px;
@@ -38,6 +38,6 @@
 }
 
 .timerDescription {
-    font-family: sans-serif;
+    font-family: 'Cabin Sketch';
     font-size: 12px;
 }
