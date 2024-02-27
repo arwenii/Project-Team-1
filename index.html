@@ -20,6 +20,68 @@
             background: #F9B279; 
         }
 
+        .cloud {
+            width: 300px; 
+            height: 200px; 
+            background-image: url('cloud.png'); 
+            background-size: cover;
+            position: absolute;
+            top: 50px; 
+        }
+
+        @keyframes floatClouds1 {
+            0% {
+                transform: translateX(-950%);
+            }
+            100% {
+                transform: translateX(950%);
+            }
+        }
+
+        @keyframes floatClouds2 {
+            0% {
+                transform: translateX(-950%);
+            }
+            100% {
+                transform: translateX(950%);
+            }
+        }
+        
+        @keyframes floatClouds3 {
+            0% {
+                transform: translateX(-950%);
+            }
+            100% {
+                transform: translateX(950%);
+            }
+        }
+        
+        @keyframes floatClouds4 {
+            0% {
+                transform: translateX(-950%);
+            }
+            100% {
+                transform: translateX(950%);
+            }
+        }
+
+        .cloud1 {
+            animation: floatClouds1 20s linear infinite; 
+            animation-delay: 0s; 
+        }
+
+        .cloud2 {
+            animation: floatClouds2 15s linear infinite; 
+            animation-delay: 0s; 
+        }
+        .cloud3 {
+            animation: floatClouds2 22s linear infinite;
+            animation-delay: 0s; 
+        }
+        .cloud4 {
+            animation: floatClouds2 25s linear infinite; 
+            animation-delay: 0s; 
+        }
         
         .spotify-player {
             float: left; 
