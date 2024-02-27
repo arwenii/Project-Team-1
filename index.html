@@ -160,6 +160,20 @@
                 document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
             });
         });
+            function playBeep() {
+        var beep = new Audio('beep.mp3');
+        beep.play();
+    }
+
+    // Function to play beep sound when timer reaches 00:00
+    function playBeepWhenZero() {
+        var timerText = document.querySelector('.timer__part').textContent;
+        if (timerText === '00:00') {
+            playBeep();
+        }
+    }
+
+    setInterval(playBeepWhenZero, 1000);
     </script>
     
 
