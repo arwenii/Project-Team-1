@@ -1,5 +1,5 @@
 .timer {
-    font-family: san-serif;
+    font-family: sans-serif;
     display: inline-block;
     padding: 24px 32px;
     border-radius: 30px;
@@ -36,6 +36,6 @@
 }
 
 .timerDescription {
-    font-family: san-serif;
+    font-family: sans-serif;
     font-size: 12px;
 }
