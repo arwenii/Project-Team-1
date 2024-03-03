@@ -39,3 +39,18 @@
     font-family: Cabin Sketch, sans-serif;
     font-size: 12px;
 }
+
+.timer__buttons-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.timer__btn:not(:last-child) {
+    margin-right: 10px; /* Add some space between buttons */
+}
+
+<div class="timer__buttons-container">
+    <button class="timer__btn timer__btn--start">Start</button>
+    <button class="timer__btn timer__btn--pomodoro">1 Pomodoro</button>
+    <button class="timer__btn timer__btn--stop">Stop</button>
+</div>
