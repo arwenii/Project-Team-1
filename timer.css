@@ -39,7 +39,3 @@
     font-family: Cabin Sketch, sans-serif;
     font-size: 12px;
 }
-
-.timer__buttons-container {
-    display: flex; /* Use flexbox */
-}
