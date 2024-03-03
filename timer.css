@@ -44,3 +44,12 @@
     display: flex;
     align-items: center; /* Align items vertically in the center */
 }
+
+.timer__btn {
+    /* Your button styles */
+    /* Ensure there's no margin to maintain alignment */
+}
+
+.timer__btn:not(:last-child) {
+    margin-right: 10px; /* Add some space between buttons */
+}
