@@ -12,11 +12,9 @@
 }
 
 .timer__btn {
-    font-family: Cabin Sketch, sans-serif;
     width: 40px;
     height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 30px 10px; 
     border-radius: 50%;
     border: none;
     color: white;
@@ -32,7 +30,7 @@
     background: #b86983;
 }
 
-.timer__btn--pomodoro {
+.pomodoro {
     font-size: 10px;
 }
 
