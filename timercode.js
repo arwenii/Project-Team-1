@@ -96,20 +96,24 @@ export default class Timer {
 
     static getHTML() {
         return `
-            <span class="timer__part timer__part--minutes">00</span>
-            <span class="timer__part">:</span>
-            <span class="timer__part timer__part--seconds">00</span>
-            <button type="button" class="timer__btn timer__btn--control timer__btn--start">
-                <span class="pomodoro">Start</span>
-            </button>
-            <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--work">
-                <span class="pomodoro">1 Pomodoro</span>
-            </button>
-            <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--break">
-                <span class="pomodoro">Long Break</span>
-            </button>
-
-            <span class="pomodoroCount">Pomodoro Count: 0</span>
+            <div>
+                <span class="timer__part timer__part--minutes">00</span>
+                <span class="timer__part">:</span>
+                <span class="timer__part timer__part--seconds">00</span>
+            </div>
+            <div>
+                <button type="button" class="timer__btn timer__btn--control timer__btn--start">
+                    <span class="pomodoro">Start</span>
+                </button>
+                <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--work">
+                    <span class="pomodoro">1 Pomodoro</span>
+                </button>
+                <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--break">
+                    <span class="pomodoro">Long Break</span>
+                </button>
+    
+                <span class="pomodoroCount">Pomodoro Count: 0</span>
+            </div>
         `;
     }
 }
