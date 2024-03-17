@@ -109,7 +109,7 @@ export default class Timer {
                 <span class="pomodoro">Long Break</span>
             </button>
 
-            <span class="pomodoroCount">Pomodoro Count: </span>
+            <span class="pomodoroCount">Pomodoro Count: 0</span>
         `;
     }
 }
