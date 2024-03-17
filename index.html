@@ -259,6 +259,11 @@
     }
 
     setInterval(playBeepWhenZero, 1000);
+
+    document.getElementById('colorDropdown').addEventListener('change', function() {
+        var selectedBackground = this.value;
+        document.body.style.backgroundImage = `url('${selectedBackground}')`;
+    });
     </script>
     
 
