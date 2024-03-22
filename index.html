@@ -51,91 +51,26 @@
         }
 
         .cloud {
-            width: 300px; 
-            height: 200px; 
-            background-image: url('cloud.png'); 
+            width: 300px;
+            height: 200px;
+            background-image: url('cloud.png');
             background-size: cover;
             position: absolute;
-            top: 0px; 
         }
 
-        @keyframes floatClouds1 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
+        /* Cloud animation keyframes */
+        @keyframes floatClouds {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
-        @keyframes floatClouds2 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-        
-        @keyframes floatClouds3 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-        
-        @keyframes floatClouds4 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-
-        @keyframes floatClouds5 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-        @keyframes floatClouds6 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-        .cloud1 {
-            animation: floatClouds1 19s linear infinite; 
-            animation-delay: 0s; 
-        }
-        .cloud2 {
-            animation: floatClouds2 21s linear infinite; 
-            animation-delay: 0s; 
-        }
-        .cloud3 {
-            animation: floatClouds2 23s linear infinite;
-            animation-delay: 0s; 
-        }
-        .cloud4 {
-            animation: floatClouds2 25s linear infinite; 
-            animation-delay: 0s; 
-        }
-        .cloud5 {
-            animation: floatClouds2 28s linear infinite; 
-            animation-delay: 0s; 
-        }
-        .cloud6 {
-            animation: floatClouds2 30s linear infinite; 
-            animation-delay: 0s; 
-        }
-        
+        /* Applying the animation to each cloud */
+        .cloud1 { top: 10px; animation: floatClouds 60s linear infinite; }
+        .cloud2 { top: 130px; animation: floatClouds 70s linear infinite; }
+        .cloud3 { top: 15px; animation: floatClouds 80s linear infinite; }
+        .cloud4 { top: 30px; animation: floatClouds 90s linear infinite; }
+        .cloud5 { top: 150px; animation: floatClouds 100s linear infinite; }
+        .cloud6 { top: 95px; animation: floatClouds 110s linear infinite; }
 
         nav{
             display: flex;
@@ -197,7 +132,6 @@
             font-size: 20px; 
         }
 
-        /* Include any other styles from your original CSS here */
     </style>
 </head>
 <body>
@@ -215,9 +149,14 @@
         <div class="title_image">
             <a href="index.html"><img src="title.png" alt="I Miss The Beach"></a>
         </div>
-        
         <!-- Floating clouds -->
-        <!-- Insert cloud divs here -->
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+        <div class="cloud cloud3"></div>
+        <div class="cloud cloud4"></div>
+        <div class="cloud cloud5"></div>
+        <div class="cloud cloud6"></div>
+    
     </header>
 
     <div class="main-content">
