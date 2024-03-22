@@ -95,29 +95,45 @@
         .cloud5 { animation: floatClouds5 28s linear infinite; }
         .cloud6 { animation: floatClouds6 30s linear infinite; }
 
-        nav{
+        nav {
             display: flex;
-            padding:10% 10%;
-            justify-content:space-between;
+            justify-content: space-between;
             align-items: center;
+            padding: 1em; /* Smaller padding for less space around nav items */
+            background-color: rgba(255, 255, 255, 0.8);
         }
-        
-        .title_image{
-            padding:10% 10%;
-            align-items: right;
-            width:800px;
+    
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
         }
-        
-        .nav-links{
-            flex:1;
-            text-align:center;
+    
+        .nav-links ul li {
+            padding: 0 10px; /* Reduced padding for less space between nav items */
         }
-
-        .nav-links ul li{
-            list-style:none;
-            display:inline-block;
-            padding: 20px 20px;
-            position:relative;
+    
+        .nav-links ul li h1 {
+            margin: 0; /* Remove any default margin */
+            font-size: 24px;
+        }
+    
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+    
+        .title_image {
+            align-items: center;
+            width: 800px; /* Adjust as necessary */
+            margin: 0 auto; /* Center the title image and remove excess space */
+        }
+    
+        /* Ensure that .header class (if it's used) doesn't add unwanted space */
+        .header {
+            padding: 0;
+            margin: 0 auto; /* Center the header content and reduce space */
         }
 
         .nav-links ul li a{
