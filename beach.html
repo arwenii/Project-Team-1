@@ -3,7 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Beach!!!</title>
-    <!-- Add any specific CSS or meta tags you need here -->
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #add8e6; /* Change this color to match your theme if needed */
+        }
+
+        .video-container {
+            width: 80vw; /* 80% of the viewport width */
+            height: 45vw; /* height is set to maintain a 16:9 aspect ratio based on the width */
+            max-height: 80vh; /* limits the maximum height to 80% of the viewport height */
+            position: relative; /* sets the positioning context for the iframe */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a shadow for aesthetics */
+            margin: auto; /* centers the div in the available space */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="video-container">
@@ -11,3 +37,4 @@
     </div>
 </body>
 </html>
+
