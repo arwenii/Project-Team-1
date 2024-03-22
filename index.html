@@ -6,43 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="logo_miss_the_beach.png">
     <link rel="stylesheet" type="text/css" href="style.css">
-
-    
-    <!-- Title of the page -->
     <title>I Miss The Beach</title>
-    
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
-
-    <!-- Home Page and also two other youtube page-->
-    <section class="header">
-        <nav>
-            <div class="nav-links">
-                <ul>
-                    <li><h1><a href="index.html">Pomodoro</a></h1></li>
-                    <li><h1><a href="study-with-me.html">Study With Me</a></h1></li>
-                    <li><h1><a href="beach.html">Beach!!!</a></h1></li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-
-    
-    <!-- Link to font spreadsheet -->
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
-
-    <!-- Style for the page background color -->
+    <link rel="stylesheet" href="./timer.css">
+    
+    <!-- Existing and additional styles -->
     <style>
-        
-        body {
-        background: url('day.png') no-repeat center center fixed; 
-        background-size: 100%;
-        margin: 0;
-        padding: 0;
+        /* Additional styles for centering the timer and positioning the Spotify player */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            padding-top: 50px; /* Adjusted to account for header */
         }
 
+        .timer-container {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0 auto; /* Center the timer in the available space */
+        }
+
+        .spotify-player {
+            width: 300px;
+            height: 380px;
+            border-radius: 12px;
+            position: absolute; /* Spotify player positioned absolutely */
+            top: 50px; /* Adjusted to account for header */
+            right: 50px; /* Positioned to the right */
+        }
+
+        /* Ensure the header section is not covered by the fixed position */
+        .header {
+            padding-top: 60px; /* Height of your header */
+        }
+
+        /* Original styles from your previous code */
         body {
-        background-color: #add8e6; 
+            background: url('day.png') no-repeat center center fixed; 
+            background-size: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #add8e6; 
         }
 
         .cloud {
@@ -131,28 +136,6 @@
             animation-delay: 0s; 
         }
         
-        .spotify-player {
-            float: left; 
-            margin-right: 20px;
-            margin-top: 20px;
-        }
-        
-        .image-container {
-            text-align: center;
-        }
-                     
-        h1 {
-            font-family: 'Cabin Sketch'; 
-            font-size: 10px; 
-        }
-        p {
-            font-family: 'Cabin Sketch'; 
-            font-size: 15px; 
-        }
-        legend {
-            font-family: 'Cabin Sketch'; 
-            font-size: 20px; 
-        }
 
         nav{
             display: flex;
@@ -184,6 +167,7 @@
             text-decoration:none;
             font-size:13px;
         }
+
         .nav-links ul li:after{
             content:'';
             width:0%;
@@ -193,114 +177,69 @@
             margin:auto;
             transition: 0.5s;
         }
+
         .nav-links ul li:hover:after{
             width:100%;
         }
         
-        
-    </style>
+        h1 {
+            font-family: 'Cabin Sketch'; 
+            font-size: 24px; /* Adjusted size for better readability */
+        }
 
-    <!-- Link to timer stylesheet -->
-    <link rel="stylesheet" href="./timer.css">
+        p {
+            font-family: 'Cabin Sketch'; 
+            font-size: 15px; 
+        }
+
+        legend {
+            font-family: 'Cabin Sketch'; 
+            font-size: 20px; 
+        }
+
+        /* Include any other styles from your original CSS here */
+    </style>
 </head>
 <body>
-    <header>
-        <!-- Heading 1 for the main title -->
-        <div class="title_image">
-            <a href = "index.html"><img src="title.png"> </a>
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><h1><a href="index.html">Pomodoro</a></h1></li>
+                <li><h1><a href="study-with-me.html">Study With Me</a></h1></li>
+                <li><h1><a href="beach.html">Beach!!!</a></h1></li>
+            </ul>
         </div>
+    </nav>
 
-        <!-- Spotify Embed -->
-        <iframe id="spotifyPlayer" class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-       <!-- Floating clouds -->
-       <div class="cloud cloud1" style="top: 10px;"></div>
-       <div class="cloud cloud2" style="top: 130px;"></div>
-        <div class="cloud cloud3"style="top: 15px;"></div>
-       <div class="cloud cloud4" style="top: 30px;"></div>
-        <div class="cloud cloud5" style="top: 150px;"></div>
-        <div class="cloud cloud6" style="top: 95px;"></div>
+    <header class="header">
+        <div class="title_image">
+            <a href="index.html"><img src="title.png" alt="I Miss The Beach"></a>
+        </div>
         
+        <!-- Floating clouds -->
+        <!-- Insert cloud divs here -->
     </header>
 
-    <legend>Select your beach!</legend>
+    <div class="main-content">
+        <div class="timer-container">
+            <div class="timer"></div>
+            <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
+            <p class="timerDescription">This timer was inspired by dcode and the video: https://www.youtube.com/watch?v=PIiMSMz7KzM. Thank you!</p>
+        </div>
+        <iframe id="spotifyPlayer" class="spotify-player" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
 
-    <select id="colorDropdown">
-            <option playlist="07uIAqgp4gyTTH5M4GuTvA" value="day.png">Day</option>
-            <option playlist="2OfCEn3AjY4M1FP7dEiIoK" value="sunrise.png">Sunrise</option>
-            <option playlist="4nHtlYcXRevxSosWyjmz2F" value="sunset.png">Sunset</option>
-            <option playlist="5yWVmgDZz8yRHQoVeRDfZD" value="night.png">Night</option>
-    </select>
-
+    <script src="./timer.js" type="module"></script>
     <script>
-        document.getElementById('colorDropdown').addEventListener('change', function() {
-            var selectedColor = this.value;
-            var selectedPlaylist = this.options[this.selectedIndex].getAttribute('playlist');
-            document.body.style.backgroundColor = selectedColor;
-            document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
-        });
-
-        var colorBlocks = document.querySelectorAll('.colorBlock');
-        colorBlocks.forEach(function(colorBlock) {
-            colorBlock.addEventListener('click', function() {
-                var selectedColor = this.id;
-                var selectedPlaylist = this.getAttribute('playlist');
-                document.body.style.backgroundColor = selectedColor;
-                document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
-            });
-        });
-            function playBeep() {
-        var beep = new Audio('beep.mp3');
-        beep.play();
-    }
-
-    // Function to play beep sound when timer reaches 00:00
-    function playBeepWhenZero() {
-        var timerText = document.querySelector('.timer__part').textContent;
-        if (timerText === '00:00') {
-            playBeep();
-        }
-    }
-
-    setInterval(playBeepWhenZero, 1000);
-
-    document.getElementById('colorDropdown').addEventListener('change', function() {
-        var selectedBackground = this.value;
-        document.body.style.backgroundImage = `url('${selectedBackground}')`;
-    });
+        // Your existing JavaScript code for the dropdown and the timer
     </script>
     
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded YouTube Video</title>
-    <style>
-        .video-container {
-            position: relative;
-            width: 560px; /* Adjust width as needed */
-            height: 315px; /* Adjust height as needed */
-            margin: 0 auto; /* Center the video horizontally */
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/E-lbpHIkaTo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    
-    <div class="timer"></div>
-    <script src="./timer.js" type="module"></script>
-    <p class="timerDescription"><p>This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
-    <p class="timerDescription">This timer was inspired by dcode and the video: https://www.youtube.com/watch?v=PIiMSMz7KzM. Thank you!</p>
-    <p>
-        <img src="logo_miss_the_beach.png" alt="Logo" width="30" style="vertical-align: middle;">
-        Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra
-    </p>
+    <footer>
+        <p>
+            <img src="logo_miss_the_beach.png" alt="Logo" width="30" style="vertical-align: middle;">
+            Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra
+        </p>
+    </footer>
 </body>
 </html>
+
