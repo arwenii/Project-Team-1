@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beach!!!</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
     <style>
         body, html {
             height: 100%;
@@ -15,7 +16,24 @@
             font-family: 'Cabin Sketch';
         }
 
-        nav {
+        .video-container {
+            width: 80vw;
+            height: 45vw;
+            max-height: 80vh;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 2em auto;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*nav {
             display: flex;
             padding: 1% 10%;
             justify-content: space-between;
@@ -42,23 +60,62 @@
             text-decoration: none;
             color: #000;
             display: block;
+        }*/
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em; 
+            /*background-color: rgb(0, 191, 255);*/
+            background-color: rgb(214, 179, 133);
+        }
+    
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .nav-links ul li {
+            padding: 0 10px;
+        }
+    
+        .nav-links ul li h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #000;
         }
 
-        .video-container {
-            width: 80vw;
-            height: 45vw;
-            max-height: 80vh;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 2em auto;
+        .nav-links ul li a{
+            /*color:#000000;*/
+            text-decoration:none;
+            font-size:13px;
+            color: rgb(255, 255, 255);
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .nav-links ul li:after{
+            content:'';
+            width:0%;
+            height:2px;
+            background:#f44336;
+            display:block;
+            margin:auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover:after{
+            width:100%;
+        }
+        
+        h1 {
+            font-family: 'Cabin Sketch'; 
+            font-size: 24px; /* Adjusted size for better readability */
         }
     </style>
 </head>
