@@ -312,17 +312,18 @@
                 <p class="timerDescription">This timer was inspired by dcode and the video: https://www.youtube.com/watch?v=PIiMSMz7KzM. Thank you!</p>
             </div>
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">Change Theme</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="changeTheme('sunrise')">Sunrise</a>
-                <a href="#" onclick="changeTheme('day')">Day</a>
-                <a href="#" onclick="changeTheme('sunset')">Sunset</a>
-                <a href="#" onclick="changeTheme('night')">Night</a>
-            </div>
+        <div>
+            <label for="themeDropdown" class="dropbtn">Change Theme:</label>
+            <select id="themeDropdown" onchange="changeTheme(this.value)">
+                <option value="sunrise">Sunrise</option>
+                <option value="day">Day</option>
+                <option value="sunset">Sunset</option>
+                <option value="night">Night</option>
+            </select>
         </div>
     </div>
 </div>
+
 
     
     <footer>
