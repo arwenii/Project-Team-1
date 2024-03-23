@@ -33,7 +33,7 @@
             height: 100%;
         }
 
-        nav {
+        /*nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -60,6 +60,62 @@
             text-decoration: none;
             color: #000;
             display: block;
+        }*/
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em; 
+            /*background-color: rgb(0, 191, 255);*/
+            background-color: rgb(214, 179, 133);
+        }
+    
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .nav-links ul li {
+            padding: 0 10px;
+        }
+    
+        .nav-links ul li h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav-links ul li a{
+            /*color:#000000;*/
+            text-decoration:none;
+            font-size:13px;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-links ul li:after{
+            content:'';
+            width:0%;
+            height:2px;
+            background:#f44336;
+            display:block;
+            margin:auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover:after{
+            width:100%;
+        }
+        
+        h1 {
+            font-family: 'Cabin Sketch'; 
+            font-size: 24px; /* Adjusted size for better readability */
         }
     </style>
 </head>
