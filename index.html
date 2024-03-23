@@ -2,132 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Welcome to the relaxing world of I Miss The Beach.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="logo_miss_the_beach.png">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <title>I Miss The Beach</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
-    <link rel="stylesheet" href="./timer.css">
-    
-    <!-- Existing and additional styles -->
+
     <style>
-        /* Additional styles for centering the timer and positioning the Spotify player */
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 55vh; /* Full height of the viewport */
-            padding-top: 50px; /* Adjusted to account for header */
-            flex-direction: column;
-            margin-bottom: 20px;
-        }
-
-        .spotify-container {
-            flex-grow: 1;
-            display: inline-block;
-            vertical-align: top;
-            text-align: center;
-            margin: 200px; /* Center the timer and Spotify player */
-        }
-        
-        .timer-container {
-            flex-grow: 1;
-            display: inline-block;
-            vertical-align: top;
-            text-align: center;
-            margin-right: 400px; /* Center the timer in the available space */
-        }
-
-        @media (max-width: 767.98px) {
-            .main-content {
-                height: auto;
-                padding: 20px;
-            }
-
-            .timer-container {
-                padding: 10px;
-            }
-
-            .spotify-player {
-                width: 90%;
-                height: auto;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 479.98px) {
-            .main-content {
-                height: auto;
-                padding: 10px;
-            }
-
-            .timer-container {
-                padding: 5px;
-            }
-
-            .spotify-player {
-                width: 100%;
-            }
-
-            h1 {
-                font-size: 18px;
-            }
-        }
-
-        .spotify-player {
-            width: 300px;
-            height: 380px;
-            border-radius: 12px;
-            position: absolute;
-            top: 270px; /* Adjust as needed */
-            right: 300px;
-        }
-
-        
-        .footer {
-            margin-top: 0; 
-        }
-
-        .dropdown {
-            position: relative;
-            display: block;
-        }
-
-        .dropbtn {
-            background-color: #3498db;
-            color: white;
-            padding: 10px;
-            border-radius: 30px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            padding: 15px;
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .header {
-            position: relative;
-            padding-top: 60px; 
-        }
-
         body {
             background: url('day.png') no-repeat center center fixed; 
             background-size: cover;
@@ -135,61 +17,19 @@
             padding: 0;
             background-color: #add8e6;
         }
-        @media (max-width: 767.98px) {
-            body {
-                background-size: contain;
-            }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 50px;
+            flex-direction: column;
         }
-        @media only screen and (max-width: 480px) {
-          body {
-            background-size: contain;
-          }
+
+        .timer-container {
+            text-align: center;
+            margin-top: 20px;
         }
-    
-        .cloud {
-            width: 300px; 
-            height: 200px; 
-            background-size: cover;
-            position: absolute;
-            z-index: -1;
-        }
-    
-        @keyframes floatClouds1 {
-            0% { transform: translateX(-950%); }
-            100% { transform: translateX(950%); }
-        }
-    
-        @keyframes floatClouds2 {
-            0% { transform: translateX(-950%); }
-            100% { transform: translateX(950%); }
-        }
-        
-        @keyframes floatClouds3 {
-            0% { transform: translateX(-950%); }
-            100% { transform: translateX(950%); }
-        }
-        
-        @keyframes floatClouds4 {
-            0% { transform: translateX(-950%); }
-            100% { transform: translateX(950%); }
-        }
-    
-        @keyframes floatClouds5 {
-            0% { transform: translateX(-950%); }
-            100% { transform: translateX(950%); }
-        }
-    
-        @keyframes floatClouds6 {
-            0% { transform: translateX(-950%); }
-            100% { transform: translateX(950%); }
-        }
-    
-        .cloud1 { animation: floatClouds1 19s linear infinite; top: 50px; background-image: url('cloud1.png');}
-        .cloud2 { animation: floatClouds2 21s linear infinite; top: 100px; background-image: url('cloud2.png');}
-        .cloud3 { animation: floatClouds3 23s linear infinite; top: 150px; background-image: url('cloud3.png');}
-        .cloud4 { animation: floatClouds4 25s linear infinite; top: 400px; background-image: url('cloud4.png'); width: 400px; height: 200px;}
-        .cloud5 { animation: floatClouds5 27s linear infinite; top: 250px; background-image: url('cloud5.png');}
-        .cloud6 { animation: floatClouds6 29s linear infinite; top: 300px; background-image: url('cloud6.png');}
 
         nav {
             display: flex;
@@ -198,126 +38,119 @@
             padding: 1em;
             background-color: rgb(214, 179, 133);
         }
-    
+
         .nav-links ul {
             list-style: none;
             display: flex;
             margin: 0;
             padding: 0;
         }
-    
+
         .nav-links ul li {
             padding: 0 10px;
         }
-    
-        .nav-links ul li h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-    
+
         .nav-links ul li a {
             text-decoration: none;
             color: #000;
-        }
-    
-        .title_image {
-            display: block;
-            /*align-items: center;*/
-            width: 30%;
-            margin: 20px auto;
+            font-size: 24px;
         }
 
         .header {
-            padding: 0;
-            margin: 0 auto; 
+            text-align: center;
+            margin: 0;
         }
 
-        .nav-links ul li a{
-            text-decoration:none;
-            font-size:13px;
-            color: rgb(255, 255, 255);
+        .footer {
+            text-align: center;
+            margin-top: 20px;
         }
 
-        .nav-links ul li:after{
-            content:'';
-            width:0%;
-            height:2px;
-            background:#f44336;
-            display:block;
-            margin:auto;
-            transition: 0.5s;
+        .spotify-player {
+            border-radius: 12px;
+            margin-top: 20px;
         }
 
-        .nav-links ul li:hover:after{
-            width:100%;
-        }
-        
-        h1 {
-            font-family: 'Cabin Sketch'; 
-            font-size: 24px; /* Adjusted size for better readability */
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
 
-        p {
-            font-family: 'Cabin Sketch'; 
-            font-size: 15px; 
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
         }
 
-        legend {
-            font-family: 'Cabin Sketch'; 
-            font-size: 20px; 
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
         }
 
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-links">
             <ul>
-                <li><h1><a href="index.html">Pomodoro</a></h1></li>
-                <li><h1><a href="study-with-me.html">Study With Me</a></h1></li>
-                <li><h1><a href="beach.html">Beach!!!</a></h1></li>
+                <li><a href="index.html">Pomodoro</a></li>
+                <li><a href="study-with-me.html">Study With Me</a></li>
+                <li><a href="beach.html">Beach!!!</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="header">
-        <div class="title_image">
-            <a href="index.html"><img src="title.png" alt="I Miss The Beach"></a>
-        </div>
-        <!-- Floating clouds -->
-        <div class="cloud cloud1"></div>
-        <div class="cloud cloud2"></div>
-        <div class="cloud cloud3"></div>
-        <div class="cloud cloud4"></div>
-        <div class="cloud cloud5"></div>
-        <div class="cloud cloud6"></div>
-    
+        <h1>I Miss The Beach</h1>
+        <img src="title.png" alt="I Miss The Beach">
     </header>
 
     <div class="main-content">
-        <div class="timer-container">
-            <div class="timer"></div>
-            <div class="dropdown">
-                <button class="dropbtn"><h1>Timer Description</h1></button>
-                <div class="dropdown-content">
-                    <p class="timerDescription">This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
-                    <p class="timerDescription">This timer was inspired by dcode and the video: https://www.youtube.com/watch?v=PIiMSMz7KzM. Thank you!</p>
-                </div>
+        <iframe id="spotifyPlayer" class="spotify-player" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Change Theme</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="changeTheme('sunrise')">Sunrise</a>
+                <a href="#" onclick="changeTheme('day')">Day</a>
+                <a href="#" onclick="changeTheme('sunset')">Sunset</a>
+                <a href="#" onclick="changeTheme('night')">Night</a>
             </div>
         </div>
-    </div>
-    
-    <footer>
-        <p>
-            <img src="logo_miss_the_beach.png" alt="Logo" width="30" style="vertical-align: middle;">
-            Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra
-        </p>
-    </footer>
-    
-    <div>
-        <iframe id="spotifyPlayer" class="spotify-player" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-    <script src="./timer.js" type="module"></script>
 
+        <div class="timer-container">
+            <p>This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
+    </footer>
+
+    <script>
+        function changeTheme(theme) {
+            // Logic to change theme and Spotify playlist based on selection
+        }
+    </script>
+    <script src="./timer.js" type="module"></script>
 </body>
 </html>
