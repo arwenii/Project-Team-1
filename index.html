@@ -2,188 +2,247 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Welcome to the relaxing world of I Miss The Beach.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Title of the page -->
+    <meta name="description" content="Welcome to the relaxing world of I Miss The Beach.">
+    <link rel="icon" type="image/png" href="logo_miss_the_beach.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>I Miss The Beach</title>
-    
-    <!-- Link to external stylesheet -->
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
-    
-    <!-- Link to font spreadsheet -->
     <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
-
-    <!-- Style for the page background color -->
+    <link rel="stylesheet" href="./timer.css">
+    
     <style>
-        body {
-            background: #F9B279; 
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding-top: 50px;
+            flex-direction: column;
         }
-        .youtube-container {
-            position: relative;
-            top: 800px;
-            left: 1000px;
-            margin: 0 auto
+
+        .spotify-container {
+            flex-grow: 1;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            margin: 200px;
         }
-        .youtube-container iframe{
+        
+        .timer-container {
+            flex-grow: 1;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            margin-right: 400px;
+        }
+
+        @media (max-width: 767.98px) {
+            .main-content {
+                height: auto;
+                padding: 20px;
+            }
+
+            .timer-container {
+                padding: 10px;
+            }
+
+            .spotify-player {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        .spotify-player {
+            width: 300px;
+            height: 380px;
+            border-radius: 12px;
             position: absolute;
-            top: 800px;
-            left: 1000px;
+            top: 270px;
+            right: 300px;
         }
+
+        @media (max-width: 479.98px) {
+            .main-content {
+                height: auto;
+                padding: 10px;
+            }
+
+            .timer-container {
+                padding: 5px;
+            }
+
+            .spotify-player {
+                width: 50%;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+        }
+
+        .footer {
+            margin-top: 0; 
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border-radius: 30px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .header {
+            position: relative;
+            padding-top: 60px; 
+        }
+
+        body {
+            background: url('day.png') no-repeat center center fixed; 
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-color: #add8e6;
+        }
+
+        @media (max-width: 767.98px) {
+            body {
+                background-size: contain;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            body {
+                background-size: contain;
+            }
+        }
+    
         .cloud {
             width: 300px; 
             height: 200px; 
-            background-image: url('cloud.png'); 
             background-size: cover;
             position: absolute;
-            top: 50px; 
+            z-index: -1;
+        }
+    
+        .cloud1 { animation: floatClouds1 19s linear infinite; top: 50px; background-image: url('cloud1.png');}
+        .cloud2 { animation: floatClouds2 21s linear infinite; top: 100px; background-image: url('cloud2.png');}
+        .cloud3 { animation: floatClouds3 23s linear infinite; top: 150px; background-image: url('cloud3.png');}
+        .cloud4 { animation: floatClouds4 25s linear infinite; top: 400px; background-image: url('cloud4.png'); width: 400px; height: 200px;}
+        .cloud5 { animation: floatClouds5 27s linear infinite; top: 250px; background-image: url('cloud5.png');}
+        .cloud6 { animation: floatClouds6 29s linear infinite; top: 300px; background-image: url('cloud6.png');}
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            background-color: rgb(214, 179, 133);
+        }
+    
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .nav-links ul li {
+            padding: 0 10px;
+        }
+    
+        .nav-links ul li h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+    
+        .title_image {
+            display: block;
+            align-items: center;
+            width: 800px;
+            margin: 20px auto;
         }
 
-        @keyframes floatClouds1 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
+        .nav-links ul li a{
+            text-decoration:none;
+            font-size:13px;
+            color: rgb(255, 255, 255);
         }
 
-        @keyframes floatClouds2 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-        
-        @keyframes floatClouds3 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
-        }
-        
-        @keyframes floatClouds4 {
-            0% {
-                transform: translateX(-950%);
-            }
-            100% {
-                transform: translateX(950%);
-            }
+        .nav-links ul li:after{
+            content:'';
+            width:0%;
+            height:2px;
+            background:#f44336;
+            display:block;
+            margin:auto;
+            transition: 0.5s;
         }
 
-        .cloud1 {
-            animation: floatClouds1 20s linear infinite; 
-            animation-delay: 0s; 
-        }
-
-        .cloud2 {
-            animation: floatClouds2 15s linear infinite; 
-            animation-delay: 0s; 
-        }
-        .cloud3 {
-            animation: floatClouds2 22s linear infinite;
-            animation-delay: 0s; 
-        }
-        .cloud4 {
-            animation: floatClouds2 25s linear infinite; 
-            animation-delay: 0s; 
+        .nav-links ul li:hover:after{
+            width:100%;
         }
         
-        .spotify-player {
-            float: left; 
-            margin-right: 20px; 
-        }
-        
-        .image-container {
-            text-align: center;
-        }
-                     
         h1 {
             font-family: 'Cabin Sketch'; 
-            font-size: 50px; 
+            font-size: 24px;
         }
+
         p {
             font-family: 'Cabin Sketch'; 
             font-size: 15px; 
         }
+
         legend {
             font-family: 'Cabin Sketch'; 
             font-size: 20px; 
         }
     </style>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./timer.css">
 </head>
 <body>
-    <header>
-        <!-- Heading 1 for the main title -->
-        <h1><center>I Miss The Beach</center></h1>
-
-        <!-- Spotify Embed -->
-        <iframe id="spotifyPlayer" class="spotify-player" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EIdeZOWorpAS6?utm_source=generator&theme=0" width="300" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-       <!-- Image of the Beach -->
-       <div class="image-container">
-           <img src="beach.png" alt="Picture of The Beach" width="1000"> <!-- Adjust the width as needed -->
-       </div>
-        </div>
-       <!-- Floating clouds -->
-       <div class="cloud cloud1"></div>
-       <div class="cloud cloud2" style="top: 150px;"></div>
-        <div class="cloud cloud3"style="top: 90px;"></div>
-       <div class="cloud cloud4" style="top: 180px;"></div>
-        
-    </header>
-
-    <legend>Select your beach!</legend>
-
-    <select id="colorDropdown">
-        <option value="#F9B279" playlist="2OfCEn3AjY4M1FP7dEiIoK">Sunrise</option>
-        <option value="#65b2ca" playlist="07uIAqgp4gyTTH5M4GuTvA">Day</option>
-        <option value="#d29aa5" playlist="4nHtlYcXRevxSosWyjmz2F">Sunset</option>
-        <option value="#186690" playlist="5yWVmgDZz8yRHQoVeRDfZD">Night</option>
-    </select>
-
-    <div class="colorBlock" id="Sunrise" playlist="2OfCEn3AjY4M1FP7dEiIoK"></div>
-    <div class="colorBlock" id="Day" playlist="07uIAqgp4gyTTH5M4GuTvA"></div>
-    <div class="colorBlock" id="Sunset" playlist="4nHtlYcXRevxSosWyjmz2F"></div>
-    <div class="colorBlock" id="Night" playlist="5yWVmgDZz8yRHQoVeRDfZD"></div>
-
-    <script>
-        document.getElementById('colorDropdown').addEventListener('change', function() {
-            var selectedColor = this.value;
-            var selectedPlaylist = this.options[this.selectedIndex].getAttribute('playlist');
-            document.body.style.backgroundColor = selectedColor;
-            document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
-        });
-
-        var colorBlocks = document.querySelectorAll('.colorBlock');
-        colorBlocks.forEach(function(colorBlock) {
-            colorBlock.addEventListener('click', function() {
-                var selectedColor = this.id;
-                var selectedPlaylist = this.getAttribute('playlist');
-                document.body.style.backgroundColor = selectedColor;
-                document.getElementById('spotifyPlayer').src = `https://open.spotify.com/embed/playlist/${selectedPlaylist}?utm_source=generator&theme=0`;
-            });
-        });
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded YouTube Video</title>
-    </div>
-    <div class="youtube-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/E-lbpHIkaTo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    
-    <div class="timer"></div>
-    <script src="./timer.js" type="module"></script>
-    <p class="timerDescription"><p>This is a timer that uses the Pomodoro Technique! 1 Pomodoro = 25 minutes of work + 5-minute short break. 4 Pomodoros are followed by a 30-minute long break.</p></p>
-    <p>Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra</p>
-</body>
-</html>
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><h1><a href="index.html">Pomodoro</a></h1></li>
+                <li><h1><a href="
