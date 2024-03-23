@@ -106,7 +106,7 @@ export default class Timer {
                     <span class="pomodoro">Start</span>
                 </button>
                 <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--work">
-                    <span class="pomodoro">1 Pomodoro</span>
+                    <span class="pomodoro">Pomodoro</span>
                 </button>
                 <button type="button" class="timer__btn timer__btn--pomodoro timer__btn--break">
                     <span class="pomodoro">Long Break</span>
