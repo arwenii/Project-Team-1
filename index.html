@@ -22,17 +22,26 @@
             flex-direction: column;
         }
 
-        .spotify-container {
-            flex-grow: 1;
-            text-align: center;
-            margin: 20 px; /* Center the timer and Spotify player */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Adjusted margin for spacing */
         }
-        
+
+        .spotify-container,
         .timer-container {
-            flex-grow: 1;
             text-align: center;
-            margin: 0 auto; /* Center the timer in the available space */
         }
+
+        .spotify-player {
+            width: 300px;
+            height: 380px;
+            border-radius: 12px;
+            margin-left: 20px;
+        }
+
+        
         .footer {
             margin-top: 0; 
         }
@@ -64,12 +73,6 @@
 
         .dropdown:hover .dropdown-content {
             display: block;
-        }
-
-        .spotify-player {
-            width: 300px;
-            height: 380px;
-            border-radius: 12px;
         }
 
         .header {
