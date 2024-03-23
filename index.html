@@ -128,10 +128,15 @@
 
         body {
             background: url('day.png') no-repeat center center fixed; 
-            background-size: 100%;
+            background-size: cover;
             margin: 0;
             padding: 0;
             background-color: #add8e6;
+        }
+        @media (max-width: 767.98px) {
+            body {
+                background-size: contain;
+            }
         }
     
         .cloud {
