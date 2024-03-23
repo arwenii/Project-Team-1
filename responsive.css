@@ -1,0 +1,45 @@
+
+.nav-links ul li {
+    padding: 0 15px;
+    font-size: 24px;
+}
+
+.title_image img {
+    width: 800px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav-links ul li {
+        padding: 0 10px;
+        font-size: 20px;
+    }
+
+    .title_image img {
+        width: 600px;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .nav-links ul li {
+        padding: 0 5px;
+        font-size: 16px;
+    }
+
+    .title_image img {
+        width: 300px;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .spotify-player,
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+    }
+
+}
