@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,6 +55,152 @@
 
         .nav-links ul li h1 {
             font-size: 24px; /* or your desired size */
+        }
+
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+        }*/
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em; 
+            /*background-color: rgb(0, 191, 255);*/
+            background-color: rgb(214, 179, 133);
+        }
+    
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .nav-links ul li {
+            padding: 0 10px;
+        }
+    
+        .nav-links ul li h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+    
+        .nav-links ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .nav-links ul li a{
+            /*color:#000000;*/
+            text-decoration:none;
+            font-size:13px;
+            color: rgb(255, 255, 255);
+        }
+
+        .nav-links ul li:after{
+            content:'';
+            width:0%;
+            height:2px;
+            background:#f44336;
+            display:block;
+            margin:auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover:after{
+            width:100%;
+        }
+        
+        h1 {
+            font-family: 'Cabin Sketch'; 
+            font-size: 24px; /* Adjusted size for better readability */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><h1><a href="index.html">Pomodoro</a></h1></li>
+                <li><h1><a href="study-with-me.html">Study With Me</a></h1></li>
+                <li><h1><a href="beach.html">Beach!!!</a></h1></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/E-lbpHIkaTo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        <p>
+            <img src="logo_miss_the_beach.png" alt="Logo" width="30" style="vertical-align: middle;">
+            Made with &hearts; by Arwen, Melody, Elly, Estella, and Alexandra
+        </p>
+    </footer>
+</body>
+</html>*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Beach!!! - a calm and relaxing space.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo_miss_the_beach.png">
+    <title>Beach!!!</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin Sketch' rel='stylesheet'>
+    <style>
+        body {
+            background: url('day.png') no-repeat center center fixed; 
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cabin Sketch';
+        }
+
+        .video-container {
+            width: 80vw;
+            height: 45vw;
+            max-height: 80vh;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 2em auto;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /*nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links ul li {
+            padding: 10px 20px;
+        }
+
+        .nav-links ul li h1 {
+            font-size: 24px; 
         }
 
         .nav-links ul li a {
